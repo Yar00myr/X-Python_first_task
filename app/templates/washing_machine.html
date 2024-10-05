@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Симуляція пральної машини</h1>
+    <form method="POST" id="wash-form">
+        {{ form.hidden_tag() }}
+        {{ form.start_button(class="btn btn-primary") }}
+    </form>
+
+    <div id="wash-status">
+        <p>Статус: <span id="current-status">Очікування початку...</span></p>
+    </div>
+
+
+{% endblock %}
+
