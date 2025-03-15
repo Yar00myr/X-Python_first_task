@@ -8,11 +8,31 @@
     <link rel="shortcut icon" href="{{url_for('static', filename='img/washing_machine.jpg')}}" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
-        {% block content %}{% endblock %}
-    </div>
+    <main> 
+        <div class="container">
+            <div class="washing-machine">
+                <div class="machine-body">
+                    <div class="screen">
+                        <div class="buttons">
+                            <div class="button power">Power</div>
+                            <div class="button start">Start</div>
+                            <div class="button pause">Pause</div>
+                        </div>
+                    </div>
+                    <div class="door">
+                        <div class="water"></div>
+                    </div>
+                </div>
+            </div>
+            
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+
     {% block scripts %}
-<script src="static/javascript/main.js"></script>
-{% endblock %}
+        <script src="{{ url_for('static', filename='javascript/main.js') }}"></script>
+    {% endblock %}
 </body>
 </html>

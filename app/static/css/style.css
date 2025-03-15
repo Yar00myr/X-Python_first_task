@@ -1,6 +1,154 @@
 body {
-    background-color: azure;
+    background: linear-gradient(to right, #b5cef8, #c9eaf9);
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+    backdrop-filter: blur(10px);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
 
+.container {
+    padding: 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.machine-title {
+    margin-bottom: 20px;
+}
+
+.washing-machine {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    background: #e0e0e0;
+    border-radius: 15px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.screen {
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.door {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 5px solid #999;
+    position: relative;
+    overflow: hidden;
+}
+
+.water {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(0, 123, 255, 0.5);
+    animation: water-animation 5s infinite ease-in-out;
+}
+
+@keyframes water-animation {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 90%;
+    }
+    100% {
+        height: 0;
+    }
+}
+
+.buttons {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.button {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    margin: 0 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+.power {
+    background-color: #f44336;
+}
+
+.start {
+    background-color: #4caf50;
+}
+
+.pause {
+    background-color: #ff9800;
+}
+
+.custom-btn {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    border-radius: 50px;
+}
+
+.custom-btn:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+.custom-btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px 3px rgba(0, 123, 255, 0.6);
+}
+
+@media (min-width: 768px) {
+    .custom-btn {
+        padding: 0.25em 0.75em;
+    }
 }
